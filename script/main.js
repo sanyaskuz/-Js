@@ -4,6 +4,9 @@
 // alert(name);
 // const name = prompt('Периметр кватрат')
 // alert(name*4);
+//   calculateCircumference(name);
+const name = prompt('Имя')
+alert(name);
 
 
 // Math.pow(name, 2);
@@ -14,5 +17,5 @@
 //   }
   
 //   calculateCircumference(name);
-const name = prompt('Радиус окружности')
-alert(name*name*3,14);
+// const name = prompt('Радиус окружности')
+// alert(name*name*3,14);
