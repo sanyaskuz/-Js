@@ -1,26 +1,53 @@
-// const name = prompt('Год рождения?')
-// alert(2021-name);
-// const name = prompt('Год ваше рождения?')
-// alert(name);
-// const name = prompt('Периметр кватрат')
-// alert(name*4);
-//   calculateCircumference(name);
-const name  = prompt('Сколько Km')
-const tima = prompt('За сколько времени')
-alert(name/tima);
-// let message = '5 задание я не сильно смог реалезовть много чего пересмортрел . \n"но это оказалось сложно с временем еще пока"  \n"И вопросы есть по 4  заданию правильно я его сделал или нет  если будет время сможете пожалуйста скинуть в чем проблема что бы я мог это решить и посоветовать как это сделать"';
-// alert(message);
+// Задание №1
+// const a =  Number(prompt('Решаем ленейное уравнение ax+b=0;Введите число (a) от 1доInfinity'))
+// let b = Number(prompt('Введите число (b) от 1доInfinity'))
+// b = (- b);
+// console.log(b);
+
+// alert(`x-равно : ${ (b/a)}`);
+// Я нашел такое решени но не знаю на сколько оно правильное 
+
+
+
+// Задание №2
+// const clock = +prompt('Введите сколько сейчас часов ')
+// const miutes = +prompt('Введите сколько сейчас минут ')
+// let day = 24
+// let dayMiute = 60 
+// day = (24-clock);
+// dayMiute = (60-miutes);
+// console.log(day, dayMiute );
+// alert(`До конца дня осталось : ${(day )}  :  ${ (dayMiute)} `);
+// Я реалезовал это так 
+
+
+// Задание №3
+// const number = prompt('Введите трех значное число')
+// let share = 10
+// share = Math.floor(number/10%10);
+// console.log(share);
+// alert(`Ваше втрое число : ${ (share)}`);
+// Я смог сделать эту задачу так
+
+// Задача №4
+
+// let number = +prompt('Введите пяти значное число')
+// let n = 0
+
+
+
+// alert(n);
+// Я не особо понял как это реалезовать если вам не сложно сможите пожалуйса написать в коментах к дз
+
+
+// Задача № 5
+
+const sum = +prompt('Введите сумму продаж за прошлый месяц')
+const salary  = 250
+let interest = (sum / 10)
+console.log(interest)
+alert(`Ваша зарплата за этот месяц : = ${(salary+interest)}`)
 
 
 
 
-// Math.pow(name, 2);
-
-
-// function calculateCircumference(radius) {
-//      Math.PI * radius;
-//   }
-  
-//   calculateCircumference(name);
-// const name = prompt('Радиус окружности')
-// alert(name*name*3,14);
