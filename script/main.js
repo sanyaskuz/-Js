@@ -31,22 +31,26 @@
 
 // Задача №4
 
-// let number = +prompt('Введите пяти значное число')
-// let n = 0
+let number = prompt('Введите пяти значное число')
+num = number%10
+number = number - num
+number = number/10
+number = num + String(number)
 
 
-
-// alert(n);
+alert(number);
 // Я не особо понял как это реалезовать если вам не сложно сможите пожалуйса написать в коментах к дз
 
 
 // Задача № 5
 
-const sum = +prompt('Введите сумму продаж за прошлый месяц')
-const salary  = 250
-let interest = (sum / 10)
-console.log(interest)
-alert(`Ваша зарплата за этот месяц : = ${(salary+interest)}`)
+// const sum = +prompt('Введите сумму продаж за прошлый месяц')
+// const salary  = 250
+// let interest = (sum / 10)
+// console.log(interest)
+// alert(`Ваша зарплата за этот месяц : = ${(salary+interest)}`)
+
+// реалезовал эту дз так
 
 
 
