@@ -82,21 +82,22 @@
 
 
 // Задача № 5
-let number = prompt('Укажите число')
-let x = 0 ;
-while (number > x){
-    x *= 10;
-    x += number % 10;
-    number = Math.trunc(number /10);
-}
-if (number == x){
-    alert ('Ваше число полиндром')
-} else if (number == Math.trunc(x /10)) {
-    alert ('Ваше число полиндром')
-} else {
-    alert ('Ваше число не полиндром')
-}
-
+// let number = prompt('Укажите число')
+// let x = 0 ;
+// while (number > x){
+//     x *= 10;
+//     x += number % 10;
+//     number = Math.trunc(number /10);
+// }
+// if (number == x){
+//     alert ('Ваше число полиндром')
+// } else if (number == Math.trunc(x /10)) {
+//     alert ('Ваше число полиндром')
+// } else {
+//     alert ('Ваше число не полиндром')
+// }
+// Извините что так поздно сдаю дз времени нету сейчас вообще праздники роботы очень много !
+// С новым годом !!
 
 
 
