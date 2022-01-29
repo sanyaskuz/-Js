@@ -1,91 +1,67 @@
 //Задание №1
-// let a = +(prompt('Укажите начало диапозона чисел'))
-// let b = +(prompt('укажите конец диапазона чисел'))
-// let sum = 0
-// while(a <= b){
-//     if(a > b)  break;
-//     sum += a
-//     a++
-//     console.log(sum)
+
+// do {
+//     let num1 = +(prompt('Укажите число: '));
+//     let num2 = +(prompt('Укажите число: '));
+//     let sign = (prompt('Укажите знак : + - / *'))
+//        switch (sign) {
+//            case '+':
+//                alert(num1 + num2);
+//                break;
+//             case '-':
+//                 alert(num1 - num2);
+//                 break;   
+//             case '*':
+//                 alert(num1 * num2);
+//                 break;    
+//             case '/':
+//                 alert(num1 / num2);
+//                 break;   
+
+//            default:
+//                break;
+//        }
     
-// }
-// Задача №2
-// let a = +(prompt('Первое число'))
-// let b = +(prompt('Второе число'))
-// let i;
-// while (a!=b) {
-//     if (a > b) {
-//         a = a - b;
-//     }
-//     else {
-//         b = b - a;
-//     }
-// }
+//     }while(confirm('Хотите решить еще один пример ?'))
 
-// alert(i = a)
-// Задача № 3
-// let a = +(prompt('Укажите число'));
 
-// for (let i = 1; i <= a; i++) {
-//   if (a % i == 0 ) {
+//Задание №2
+// let num = prompt('Укажите число :');
+// let move = prompt('На скалько цыфр сдвинуть');
 
-//     console.log(i)
-    
+// function shift(num, move) {
+   
+   
+//     let i = num.length > 0 ? move % num.length : 0;
+   
+//     return alert(num.slice(i) + num.slice(0, i))
 //   }
-  
-  
-// }
-// Задача №4
-// let a = prompt('Введите число : ')
-// for (let i = 0; i < a.length; i++) {
-//     const b = a.length;
-//     console.log(b)
-
-// }
-//   Задача №5
-let q1 = 0 , q2 = 0, q3 = 0, q4 = 0, q5 = 0;
  
-let num1;
+//   shift(num, move)
+  
 
-for(let i = 0; i < 10; i++)
-{
-    num1 = (prompt("Введите " + (i+1) + " чисел= "))
-
-    if(num1 > 0)
-    {
-        q1++;
-    }else
-    if(num1 === 0)
-    {
-        q3++;
-    }else
-    if(num1 < 0)
-    {
-        q2++;
-    }
-    
-    if(num1 % 2 == 0){
-        q4++;
-    }else
-    if(num1 % 2 != 0){
-        q5++;
-    }
+//Задание №3
 
 
-}
+// const days = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'];
+// let currDay = 0;
 
-alert("Количество положительных: " + q1);
+// while (confirm(`${days[currDay]}. Хотите увидеть следующий день?`)) {
+//   currDay = (currDay + 1) % days.length;
+// }
 
-alert("Количество отрицательных: " + q2);
+//Задание №4
  
-alert("Количество нулей: " + q3);
-
-alert("Количество четных:" + q4);
-
-alert("Количество нечетных:" +q5);
-
-
-
-
-
+// document.write("<h1>Таблица умножения</h1>"); 
+ 
+// for (j = 2; j <= 9; j++){  
+// document.write("<div style='float: left; width: 70px;'>"); 
+// for (i = 2; i <=9; i++)  
+// { 
+// document.write(i + "*" + j + "=" +(i*j) + "<br>"); 
+ 
+// }  
+// document.write ("</div>"); 
+// }
+//Задание №5
 
