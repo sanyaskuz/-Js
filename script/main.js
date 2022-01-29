@@ -64,4 +64,32 @@
 // document.write ("</div>"); 
 // }
 //Задание №5
+let a = 100;
+let delta = a / 2;
+
+alert (`загадайте от 0 до ${a}`);
+let n = a;
+
+let i=1;
+do{
+if (confirm(`число равно ${n}?`)){
+    alert('ура');
+    break
+}
+else{
+      if (confirm(`число меньше ${n}?`)){
+        n = n-delta;
+      } 
+   else{
+      if (confirm(`число больше ${n}?`)){
+        n = n+delta;
+      } 
+   }
+delta = Math.floor(delta / 2);
+
+}
+i++;
+console.log(a, n, delta);
+
+} while(i<20);
 
