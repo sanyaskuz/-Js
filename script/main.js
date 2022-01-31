@@ -1,95 +1,57 @@
 //Задание №1
+// const num1 = +(prompt('Укажите  число'))
+// const num2 = +(prompt('Укажите  число'))
 
-// do {
-//     let num1 = +(prompt('Укажите число: '));
-//     let num2 = +(prompt('Укажите число: '));
-//     let sign = (prompt('Укажите знак : + - / *'))
-//        switch (sign) {
-//            case '+':
-//                alert(num1 + num2);
-//                break;
-//             case '-':
-//                 alert(num1 - num2);
-//                 break;   
-//             case '*':
-//                 alert(num1 * num2);
-//                 break;    
-//             case '/':
-//                 alert(num1 / num2);
-//                 break;   
-
-//            default:
-//                break;
-//        }
-    
-//     }while(confirm('Хотите решить еще один пример ?'))
-
-
-//Задание №2
-// let num = prompt('Укажите число :');
-// let move = prompt('На скалько цыфр сдвинуть');
-
-// function shift(num, move) {
-   
-   
-//     let i = num.length > 0 ? move % num.length : 0;
-   
-//     return alert(num.slice(i) + num.slice(0, i))
+// function numberCheck () {
+//   if(num1 > num2) {
+//     console.log('-1')
+//   }else
+//   if(num1 < num2){
+//     console.log('1')
+//   }else 
+//   {
+//     console.log((num1 == num2),  '0')
 //   }
- 
-//   shift(num, move)
-  
+// }
+// numberCheck(console.log())
+//Задание №2
+// function factorial(n){
+//   return (n != 1) ? n * factorial(--n) : 1;
 
+// }
+
+// console.log(factorial(5))
 //Задание №3
-
-
-// const days = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'];
-// let currDay = 0;
-
-// while (confirm(`${days[currDay]}. Хотите увидеть следующий день?`)) {
-//   currDay = (currDay + 1) % days.length;
+// function addNumbers(n,  b, c){
+//   return n + b + c;
 // }
 
+// console.log(addNumbers('1', '2', '3'))
 //Задание №4
- 
-// document.write("<h1>Таблица умножения</h1>"); 
- 
-// for (j = 2; j <= 9; j++){  
-// document.write("<div style='float: left; width: 70px;'>"); 
-// for (i = 2; i <=9; i++)  
-// { 
-// document.write(i + "*" + j + "=" +(i*j) + "<br>"); 
- 
-// }  
-// document.write ("</div>"); 
+// let s = 0
+// function findingArea(a = b, b = a){
+//   return s = a * b
+  
 // }
+// console.log(findingArea(2,7))
 //Задание №5
-let a = 100;
-let delta = a / 2;
-
-alert (`загадайте от 0 до ${a}`);
-let n = a;
-
-let i=1;
-do{
-if (confirm(`число равно ${n}?`)){
-    alert('ура');
-    break
-}
-else{
-      if (confirm(`число меньше ${n}?`)){
-        n = n-delta;
-      } 
-   else{
-      if (confirm(`число больше ${n}?`)){
-        n = n+delta;
-      } 
+function fnnumberExcellent(num){
+  let sum = 0;
+  let reminder;
+  for( let i = 1; i < num - 1; i++){
+    reminder = num % i;
+    if(reminder === 0){
+      sum += i
+    }
+  }
+   if(num === sum) {
+    console.log(num + ' : - Совершенное число!')
+   }else{
+     console.log('Это не совершенное число!')
    }
-delta = Math.floor(delta / 2);
 
-}
-i++;
-console.log(a, n, delta);
+  }
 
-} while(i<20);
+fnnumberExcellent(28)
+
 
