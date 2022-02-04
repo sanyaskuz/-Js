@@ -1,57 +1,44 @@
 //Задание №1
-// const num1 = +(prompt('Укажите  число'))
-// const num2 = +(prompt('Укажите  число'))
-
-// function numberCheck () {
-//   if(num1 > num2) {
-//     console.log('-1')
-//   }else
-//   if(num1 < num2){
-//     console.log('1')
-//   }else 
-//   {
-//     console.log((num1 == num2),  '0')
+// let result = [];
+// function getPerfect(a, b) {
+  
+//   for (let i = a; i < b; i++) {
+//     sum = 0;
+//     for (let n = 1; n <= i/2; n++) {
+//       if (i % n === 0) sum += n;
+//     }
+//     if (i === sum) result.push(i);
 //   }
+//   return result;
 // }
-// numberCheck(console.log())
-//Задание №2
-// function factorial(n){
-//   return (n != 1) ? n * factorial(--n) : 1;
+ 
+// console.log(getPerfect(1, 45667));
+// let num = 8;
+//  let perfect = result.includes(`${num}`)
+// if(perfect == true ){
+//   console.log(`${num}`, ': Ваше число совершенное')}
+//   else {
+//     console.log(`${num}`, ': Ваше число не совершенное')
+//   }
+//Задание №2  
 
+
+// function addLeadingZero(d){
+//   return (d < 10) ? '0' + d : d ;
 // }
 
-// console.log(factorial(5))
-//Задание №3
-// function addNumbers(n,  b, c){
-//   return n + b + c;
-// }
+// function getUserTime(hours = 0, minutes = 0, seconds = 0 ){
 
-// console.log(addNumbers('1', '2', '3'))
-//Задание №4
-// let s = 0
-// function findingArea(a = b, b = a){
-//   return s = a * b
+//   let h = addLeadingZero(hours)
+//   let m = addLeadingZero(minutes)
+//   let s = addLeadingZero(seconds)
+//   return `${h}:${m}:${s}`
   
 // }
-// console.log(findingArea(2,7))
-//Задание №5
-function fnnumberExcellent(num){
-  let sum = 0;
-  let reminder;
-  for( let i = 1; i < num - 1; i++){
-    reminder = num % i;
-    if(reminder === 0){
-      sum += i
-    }
-  }
-   if(num === sum) {
-    console.log(num + ' : - Совершенное число!')
-   }else{
-     console.log('Это не совершенное число!')
-   }
+// console.log(getUserTime(12,5,))
 
-  }
 
-fnnumberExcellent(28)
+
+
 
 
