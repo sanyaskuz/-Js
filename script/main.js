@@ -63,25 +63,27 @@ function addLeadingZero(d){
 //Задание №5
 
 const day = 0;
-const months = 0;
-const year = 2002;
+const months = 2;
+const year = 0;
 const day1 = 0;
-const months1 = 0;
-const year1 = 2001;
+const months1 = 1;
+const year1 = 0;
 
-function getUserTime(day , months , year , day1 , months1 , year1 ){
+function getUserTime(day = 0, months = 0, year = 0, day1 = 0, months1 = 0, year1 = 0){
   let d = Math.floor(day * 86400);
-  let m = Math.floor(months * 2628e6);
+  let m = Math.floor(months * 43800);
+  let m1 = Math.floor(m * 60);
   let y = Math.floor(year * 8760);
   let y3 = Math.floor(y * 3600);
-  let soma = d + m + y3;
+  let soma = d + m1 + y3;
   console.log(soma)
   //63143080000000
   let d1 = Math.floor(day1 * 86400);
-  let m1 = Math.floor(months1 * 2628e6);
+  let m2 = Math.floor(months1 * 43800);
+  let m3 = Math.floor(m2 * 60);
   let y1 = Math.floor(year1 * 8760);
   let y2 = Math.floor(y1 * 3600)
-  let soma1 = d1 + m1 + y2;
+  let soma1 = d1 + m3 + y2;
   console.log(soma1)
   //63111540000000
 
@@ -96,7 +98,8 @@ function getUserTime(day , months , year , day1 , months1 , year1 ){
 }
 console.log(getUserTime(day, months, year, day1, months1, year1))
 //но эта функция не учитывает высокостный год это нужно делать с new Data но я не сильно пока разобрался во времени 
-//Прошу указать если что то не правильно просто что то закрадываеться сомнения 
+//Прошу указать если что то не правильно просто что то закрадываеться сомнения
+//вроде понял исправит теперь работает лучше ) 
 
 
 
