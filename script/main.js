@@ -1,130 +1,89 @@
-// Задание 1)
-// let a = 'asdfgad'
-// let b = 'dfgddda'
-// function returnLongerStr(str1, str2){
-//   if(str1.length > str2.length){
-//     return 1;
-//   }else 
-//   if(str1.length  < str2.length ){
-//     return -1;
-//   }else
-//   if(str1.length  === str2.length ){
-//     return 0;
+// //задания 1)
+// let str = 'sanya12[{2;';
+// let arr = '[1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 13, 14, 15, 16, 17, 18, 19, 20]';
+// let str1 = '[a, q, w, e, r, t, y, u, i, o, p, s, d, f, g, h, j, k, l, z, x, c, v, b, n, m]';
+// let arr1 = '[[, ], ;, {, }, <, >, =, -, +]'
+// let count = 0, count1 = 0, count2 = 0;
+// for (const iterator of str.toLowerCase()) {
+//   if(arr.includes(iterator)){
+//     count++;
 //   }
-
 // }
-// console.log(returnLongerStr(a, b))
-// Задание 2)
-
-// let str = 'sanya'
-// function myFunc(a) {
-//   let str2 = a.substr(0, 1).toUpperCase() + a.substr(1).toLowerCase();
-//   return str2
-// }
-// console.log(myFunc(str));
-
-// Задание 3)
-// let str = "alishfciahsbxamndjqz";
-// let str1 = ["a", "e", "i", "o", "u", "y"];
-// let str3 = str.split('');
-// let str2 = str3.filter(t => str1.includes(t));
-// let count = str2.length;
-// alert(str2 +',' + count);
-
-
-
-//Задание 4)
-// let str = 'т dasdasd уВеличение продаж';
-// let text = 'увеличЕние продаж'
-// function myFunc(a, b){
-//  return a.toLowerCase().includes(b.toLowerCase());
-  
-// }
-// console.log(myFunc(str, text))
-
-  //Задание 5)
-//   let str = "Hello, world!";
-//   let str3 = "...";
-//   function getText(){
-//   let str2 = str.slice(0,8);
-//   let str4 = str2 + str3;
-//   return str4;
+// for (const iterator1 of str.toLowerCase()) {
+//   if(str1.includes(iterator1)){
+//     count1++;
 //   }
-  
+// }
+// for (const iterator2 of str.toLowerCase()) {
+//   if(arr1.includes(iterator2)){
+//     count2++;
+//   }
+// }
+// // let leng1 = str.split('').filter(a => 'asdsdqweryhfgd'.includes(a)).length;
+// console.log(count, count1, count2);
+//задания 2)
+// let str = 'AsdAddaASDFA123123';
+// function get(str){
+//   let par = str.split('');
+
+//   for(let i = 0; i < par.length; i++){
+//     if('1234456789'.includes(par[i])){
+//       par[i] = '_';
+//     }
+//     else if(par[i]>= 'A' && par[i] <= 'Z'){
+//       par[i] = par[i].toLowerCase();
+//     }
+//     else if (par[i]>= 'a' && par[i] <= 'z'){
+//       par[i] = par[i].toUpperCase();
+//     }
+   
+//   }
+   
+//  return par.join('');
+// }
+// console.log(get(str));
+
+//задания 3)
+// let str = 'font-size';
+
+// function getStr(str){
+//   let par = str.split('-');
+//   for(let i = 0; i < par.length; i++){
+//     if('size'.includes(par[i])){
+//       par[i] = 'Size';
+      
+//     }
+//   }
  
-// console.log(getTaxt())
-
-//Задание 6)
-// let str = "саня"
-// function getText(){
-//  let str1 = str.split('').reverse().join('');
-//  if(str === str1){
-//    return "true"
-//  }else
-//  if(str != str1){
-//    return "False"
-//  }
-
+//   return par.join('');
 // }
-// console.log(getText())
-//Задание 7)
+// console.log(getStr(str));
 
-// let text = "text no is";
-// function getText(){
-//   let text1 = text.split(' ');
-//   return text1.length;
-
-// }
-// console.log(getText())
-//Задание 8)
-
-// let text = "text";
-// let str = "geterj"
-
-// function getText(){
-//   if(text.length > str.length){
-//     return `${text}`
-//   }else
-//   if(text.length < str.length){
-//     return `${str}`
-//   }
+//задания 4)
+// let str = 'cascading style sheets';
+// function getStr(str){
+//   let get = str.split(' ');
+//   let get1 = get[0].slice(0, 1).toUpperCase();
+//   let get2 = get[1].slice(0, 1).toUpperCase();
+//   let get3 = get[2].slice(0, 1).toUpperCase();
+//   return `${get1 + get2 + get3}`;
   
-
 // }
-// console.log(getText())
-//Задание 9)
-// let arr = [];
-// let text = "Hello, worldw"
-// let arr1 = [];
-// for(let a of text){
-//   arr1.push(a)
-// }
-// let arr2 = arr1;
-// console.log(arr2)
-//  let letter = 'w'
-//  let a = arr2.indexOf(letter);
-//  while(a != -1) {
-//   arr.push(a);
-//   a = arr2.indexOf(letter, a + 1);
-//  }
-  
-//  console.log(arr)
-//Задание 10)
+// console.log(getStr(str));
+//задания 5)
+// let str= 'adfsa sfsdjfn sadojasnd asdjnsajdn asfjbndsjfl skf bkasn';
+// let getStr = str.split(' ').join('');
+// console.log(getStr);
+//задания 5)
+let url = 'https://itstep.org/ua/about';
+function get(url){
+let getUrl = url.split( "/" );
+let get1= getUrl[0];
+let get2 = getUrl[2];
+let get3 = getUrl[3];
+let get4 = getUrl[4];
 
-let a = 'adnaj asndjlasn asmxasc sckc'
-
-
-function get(){
-  let s = a.split(' ');
-  let b = s.length;
-  let c = s.join('').split('');
-  let q = c.length;
-  
-  let r = Math.floor(q / b);
-   return console.log( `Длинна :   ${ r}`)
-
+console.log(get2, get3, get1);
+return `протокол : ${get1} домен : ${get2} путь : ${get3 + '/' + get4}`;
 }
-
-console.log(get())
-
-
+console.log(get(url));
