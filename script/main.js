@@ -1,73 +1,133 @@
-// задания 1)
-class PrintMaсhine {
-  constructor (size, color, fontFamily){
-    this._color = color;
-    this._size = size;
-    this._fontFamily = fontFamily;
-  }
-  set size(value){
-    this._size = value;
-  }
-  set color(value){
-    this._color = value;
-  }
- 
-  set fontFamily(value){
-    this._fontFamily = value;
-  }
-  print(text){
-    document.write(`<p style="font-size: ${this._size}px; color: ${this._color}; font-family: ${this._fontFamily}">${text}</p>`);
-  }
- 
-}
-let printM = new PrintMaсhine(45, 'blue', 'sans-serif');
-printM.print('Hello World');
-//задания 2)
-// class News{
-//   constructor(header, text, teg, dateP){
+//Задания 1)
+// class Button{
+//   constructor(width, height, text){
+//     this._width = width;
+//     this._height = height;
 //     this._text = text;
-//     this._header = header;
-//     this._teg = teg;
-//     this._dateP = dateP;
-
 //   }
-//   set header(value){
-//     this._header = value;
+//   set width(value){
+//     this._width = value;
+//   }
+//   set height(value){
+//     this._height = value;
 //   }
 //   set text(value){
 //     this._text = value;
 //   }
-//   set teg(value){
-//     this._teg = value;
-//   }
-//   set dateP(value){
-//     this._dateP = value;
-//   }
-//   getTeg(){
-//     let str = '#';
-//     for (const n of this._teg) {
-//       str += n + '#';
-//     }
-//     return str;
-//   }
-//   getData(){
-//     let myDate = new Date();
-//     let dateP1 = new Date(this._dateP);
-//     if(myDate.toDateString() == dateP1.toDateString()){
-//       return "Today!";
-//     }else{
-//       let res = Math.floor((curDate.getTime() - data_pub1.getTime()) / 86400000);
-//       return `Прошло : ${res} дня`;
-//     }
-//   }
-//   showText(){
+//   showBtn(){
 //     document.write(
-//       `<h1>${this._header}</h1>
-//       <p>${this.getData()}</p>
-//       <p>${this._text}</p>
-//       <p>${this.getTeg()}</p>`
+//       `<button style = 'width: ${this._width}px; height: ${this._height}px;'>${this._text}</button>`
 //     );
 //   }
 // }
-// let getNaws = new News('Lorem, ipsum dolor sit', 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. <br> Quibusdam officia reprehenderit qui impedit?<br> Error odio autem laboriosam architecto reiciendis repudiandae ipsum<br> sint impedit consectetur quasi?', ['Lorem', 'ipsum', 'text'], '2022.05.5' );
-// getNaws.showText();
+// class ChilldBtn extends Button{
+//   constructor(width, height, text, color){
+//     super(width, height, text);
+//     this._color = color;
+//   }
+//   set color(value){
+//     this._color = value;
+//   }
+//   showBtn(){
+//     document.write(
+//       `<button style = 'width: ${this._width}px; height: ${this._height}px; background-color: ${this._color}'>${this._text}</button>`
+//     );
+//   }
+// }
+// let btn = new Button(140, 50, 'Button2');
+// btn.showBtn();
+// let btn2 = new ChilldBtn(140, 35, 'Button2', 'red');
+// btn2.showBtn();
+// Задания 2)
+
+class Figure{
+  constructor(name, size1, size2 = 0, size3 = 0, height = 0){
+    this.name = name; 
+    this.size1 = size1;
+    this.size2 = size2;
+    this.size3 = size3;
+    this.height = height;
+
+  }
+  set name(value){
+   this._name = value;
+  }
+  set size1(value){
+    this._size1 = value;
+  }
+  set size2(value){
+    this._size2 = value;
+  }
+  set size3(value){
+    this._size3 = value;
+  }
+  set height(value){
+    this._height = value;
+  }
+  // getName(){
+  //   document.write(`'Figure': ${this._name}`);
+  // }
+  showFigure(){
+    let siz = this._name + ': size:1 -' + this._size1;
+    if(this._size2 !== 0) siz +=` size:2 - ${this._size2}`;
+    if(this._size3 !== 0) siz +=` size:3 - ${this._size3}`;
+    if(this._height !== 0) siz +=` height : - ${this._height}`;
+    return siz;
+
+  }
+  getArea(){
+    document.write('Area :');
+  }
+  getPerimetr(){
+    document.write('Perimetr :');
+  }
+}
+class Square extends Figure{
+  constructor(_name, _size1){
+    super(_name, _size1);
+  }
+  getArea(){
+    super.getArea();
+    return this._size1 * this._size1;
+  }
+  getPerimetr(){
+    super.getPerimetr();
+    return this._size1 * 4;
+  }
+}
+class Rectangle extends Figure{
+  constructor(_name, _size1, _size2 ){
+    super(_name, _size1, _size2);
+  }
+  getArea(){
+    super.getArea();
+    return this._size1 * this._size2;
+  }
+  getPerimetr(){
+    super.getPerimetr;
+    return (this._size1 + this._size2) * 2;
+  }
+}
+class Triangel extends Figure{
+  constructor(_name, _size1, _size2, _size3, _height){
+    super(_name, _size1, _size2, _size3, _height);
+  }
+  getArea(){
+    super.getArea();
+    return (this._size1 * this._height) / 2;
+  }
+  getPerimetr(){
+    super.getPerimetr();
+    return this._size1 + this._size2 + this._size3;
+  }
+}
+let Fig = [
+  new Square('Sauare', 4),
+  new Rectangle('Rectangle', 6, 4),
+  new Triangel('Triangel', 5, 1, 8, 4)
+];
+for(let sowFig of Fig){
+  document.write(sowFig.showFigure() + '<br>');
+  document.write(sowFig.getArea() + '<br>');
+  document.write(sowFig.getPerimetr() + '<br>');
+}
