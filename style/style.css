@@ -1,0 +1,24 @@
+*,body{
+  margin: 0 auto;
+  padding: 0;
+  background: rgb(243, 204, 211);
+} 
+h1{
+  height: 50px;
+  padding-top: 20px;
+  
+}
+.a{
+  background-color: aqua;
+  height: 45px;
+}
+.btn{
+  width: 75px;
+  height: 30px;
+  border-radius: 15%;
+  background-color: antiquewhite;
+}
+p{
+  margin-top: 15px;
+
+}
