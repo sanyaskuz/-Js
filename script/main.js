@@ -1,67 +1,72 @@
 // Задания1
-// let div = document.createElement('div');
-// div.style.width = '100%';
-// div.style.height = '620px';
-// div.style.backgroundColor = 'aqua';
-// document.body.append(div);
-// let div1 = document.createElement('div');
-// div1.style.backgroundColor = 'antiquewhite';
-// div1.style.width = '150px';
-// div1.style.height = '40px';
-// div1.className = 'coords';
-// div.appendChild(div1);
-// div.addEventListener('click', function(e) { 
-//   // div1.innerHTML = ;
-//   console.log(e.buttons);
-//   if(e.button != 1){
-//     div1.innerHTML = 'Левая конпка миши' + 'X =' + e.clientX   + ',' + 'Y =' + e.clientY ;
-//   }else
-//   if(e.button == 2){
-//     div1.innerHTML = 'Правая конпка миши' + 'X =' + e.clientX   + ',' + 'Y =' + e.clientY ;
-//   }else
-//   if(e.button == 4){
-//     div1.innerHTML = 'средняя конпка миши' + 'X =' + e.clientX   + ',' + 'Y =' + e.clientY ;
-//   }
-// });
-// // Задания 2;
-// let input = document.createElement('input');
-// let h3 = document.createElement('h3');
-// h3.innerText = 'Ваше імя';
-// document.body.append(h3);
-// input.type = 'text';
-// input.name = 'Ваше імя';
-// document.body.append(input);
-// input.addEventListener('keypress',function(e){
-//   if ("1234567890".indexOf(e.key) != -1)
-//     e.preventDefault();
-// });
-// Задания 3
-let btn = document.getElementById('btn');
-let oneDiv = document.getElementById('oneDiv');
-let twoDiv = document.getElementById('twoDiv');
-let threeDiv = document.getElementById('threeDiv');
-oneDiv.style.backgroundColor = 'red';
-twoDiv.style.backgroundColor = 'darkgrey';
-threeDiv.style.backgroundColor = 'darkgrey';
-btn.addEventListener('click', trafficLight, false);
-function trafficLight(){
-  if(oneDiv.style.backgroundColor == 'red'){
-      oneDiv.style.backgroundColor = 'darkgrey';
-      twoDiv.style.backgroundColor = 'yellow';
-  }else 
-  if( twoDiv.style.backgroundColor ==  'yellow'){
-    twoDiv.style.backgroundColor = 'darkgrey';
-    console.log(twoDiv.style.backgroundColor);
-    threeDiv.style.backgroundColor = 'green';
-  }else
-  if(threeDiv.style.backgroundColor == 'green'){
-    threeDiv.style.backgroundColor = 'darkgrey';
-    oneDiv.style.backgroundColor = 'red';
-  }
-  
- 
-  
+let div = document.createElement('div');
+div.style.backgroundColor = 'antiquewhite';
+div.style.width = '400px';
+div.style.height = '150px';
+div.style.marginLeft = 'auto';
+div.style.marginRight = 'auto';
+document.body.append(div);
+let h2 = document.createElement('h2');
+h2.textContent = 'Регистрация';
+h2.style.textAlign = 'center';
+div.append(h2);
+let form = document.createElement('form');
+// form.setAttribute('action', '');
+form.setAttribute('method', 'GET');
+form.setAttribute('name', 'Form');
+div.append(form);
+let divMaill = document.createElement('div');
+form.append(divMaill);
+let labelMeil = document.createElement('label');
+labelMeil.setAttribute('fro', 'Post-name');
+labelMeil.innerHTML = 'Email :';
+let p = document.createElement('p');
+p.innerText = 'Eror';
+p.style.backgroundColor = 'red';
+p.style.visibility = 'collapse';
+p.style.float = 'right';
+// p.style.marginLeft = '10px';
+let inputMaill = document.createElement('input');
+inputMaill.setAttribute('id', 'Post-name');
+inputMaill.type = 'email';
+inputMaill.setAttribute('name','email');
+divMaill.append(labelMeil);
+divMaill.append(p);
+divMaill.append(inputMaill);
+let l = form.children[0];
+let divPass = l.cloneNode(true);
+divPass.children[0].innerText = 'Password :';
+divPass.children[0].setAttribute('fro', 'poss');
+divPass.children[2].id = 'pass';
+divPass.children[2].setAttribute('name','pass');
+divPass.children[2].type = 'password';
+divPass.style.marginTop = '5px';
+form.append(divPass);
+let l1 = form.children[1];
+let divPass2 = l1.cloneNode(true);
+divPass2.children[0].setAttribute('fro', 'poss2');
+divPass2.children[2].setAttribute('name','pass2');
+divPass2.children[2].id = 'pass2';
+form.append(divPass2);
+let inputBtn = document.createElement('input');
+inputBtn.type = 'submit';
+inputBtn.value = 'Click';
+form.append(inputBtn);
+// form.setAttribute('onsubmit', 'return examinationForm()');
+form.onsubmit = function examinationForm(e){
+// e.addEventListener(); 
+if(divPass.children[2] !== divPass2.children[2]){
+  p.style.visibility = 'visible';
+  return false;
+}
+return true;
 };
+
+
+
+
+
+
 
 
 
