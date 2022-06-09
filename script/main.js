@@ -21,7 +21,7 @@ let labelMeil = document.createElement('label');
 labelMeil.setAttribute('fro', 'Post-name');
 labelMeil.innerHTML = 'Email :';
 let p = document.createElement('p');
-p.innerText = 'Eror';
+p.innerText = 'Eror pass';
 p.style.backgroundColor = 'red';
 p.style.visibility = 'collapse';
 p.style.float = 'right';
@@ -38,6 +38,7 @@ let divPass = l.cloneNode(true);
 divPass.children[0].innerText = 'Password :';
 divPass.children[0].setAttribute('fro', 'poss');
 divPass.children[2].id = 'pass';
+divPass.children[1].id = 'passEror';
 divPass.children[2].setAttribute('name','pass');
 divPass.children[2].type = 'password';
 divPass.style.marginTop = '5px';
@@ -46,19 +47,25 @@ let l1 = form.children[1];
 let divPass2 = l1.cloneNode(true);
 divPass2.children[0].setAttribute('fro', 'poss2');
 divPass2.children[2].setAttribute('name','pass2');
-divPass2.children[2].id = 'pass2';
+divPass.children[2].id = 'pass2';
+
+console.log(divPass.children[2]);
+console.log(divPass2.children[2]);
 form.append(divPass2);
 let inputBtn = document.createElement('input');
 inputBtn.type = 'submit';
 inputBtn.value = 'Click';
 form.append(inputBtn);
 // form.setAttribute('onsubmit', 'return examinationForm()');
-form.onsubmit = function examinationForm(e){
-// e.addEventListener(); 
-if(divPass.children[2] !== divPass2.children[2]){
+form.onsubmit = function examinationForm(){
+  // e.preventDefault();
+  let a = divPass.children[2].value;
+  let b = divPass2.children[2].value;
+if(a!==b){
   p.style.visibility = 'visible';
   return false;
 }
+
 return true;
 };
 
