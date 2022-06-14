@@ -48,9 +48,6 @@ let divPass2 = l1.cloneNode(true);
 divPass2.children[0].setAttribute('fro', 'poss2');
 divPass2.children[2].setAttribute('name','pass2');
 divPass.children[2].id = 'pass2';
-
-console.log(divPass.children[2]);
-console.log(divPass2.children[2]);
 form.append(divPass2);
 let inputBtn = document.createElement('input');
 inputBtn.type = 'submit';
@@ -61,12 +58,22 @@ form.onsubmit = function examinationForm(){
   // e.preventDefault();
   let a = divPass.children[2].value;
   let b = divPass2.children[2].value;
+  let pas = /(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{6,}/g;
+let mail = /^([a-zA-Z0-9_-]+\.)*[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/g;
+if(!mail.test(inputMaill.value)){
+  alert('Eror Mail');
+  return false;
+}
+if(!pas.test(a)){
+  alert('Eror pas');
+  return false;
+}
 if(a!==b){
   p.style.visibility = 'visible';
   return false;
 }
 
-return true;
+return window.open('comment.html');
 };
 
 
