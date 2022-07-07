@@ -1,117 +1,84 @@
-// Задания1
-let body = document.body;
-let divInput = document.createElement('div');
-divInput.style.backgroundColor = 'lawngreen';
-let form = document.createElement('form');
-form.style.marginLeft = '76px';
-let forInput;
-let inputOne = document.createElement('input');
-inputOne.style.marginTop = '40px';
-inputOne.style.display = 'block';
-inputOne.type = 'text';
-inputOne.style.width = '200px';
-let inputTwo = document.createElement('input');
-inputTwo.style.marginTop = '50px';
-inputTwo.style.display = 'block';
-inputTwo.type = 'text';
-inputTwo.style.width = '200px';
-let Btn = document.createElement('button');
-Btn.style.display = 'block';
-Btn.style.width = '150px';
-Btn.style.height = '30px';
-Btn.style.marginTop = '50px';
-Btn.style.marginLeft = '100px';
-Btn.style.borderRadius = '25%';
-Btn.innerText = 'Click My!';
-Btn.style.color = 'slateblue';
-body.style.backgroundColor = 'antiquewhite';
-body.append(divInput);
-divInput.append(form);
-divInput.style.backgroundColor = 'aqua';
-divInput.style.width = '350px';
-divInput.style.height = '250px';
-divInput.style.border = '1px solid black';
-divInput.style.borderRadius = '25%';
-// divInput.style.marginTop = '0';
-divInput.style.margin = '0 auto';
-divInput.style.textAlign = 'center';
-form.append(inputOne);
-form.append(inputTwo);
-form.after(Btn);
-
-Btn.addEventListener('click', function(){
-  let valueOne = inputOne.value;
-  let valueTwo = inputTwo.value;
-  let url = `http://www.omdbapi.com/?apikey=6d0934bb&t=${valueOne}&y=${valueTwo}&type=movie`;
-  get(url)
-  .then(function(text){
-
-  let divText = document.createElement('div');
-  divText.style.marginLeft = '25px';
-  let divImg = document.createElement('div');
-  divImg.style.marginLeft = '25px';
-  let divFlex = document.createElement('div');
-  divFlex.style.display = 'flex';
-  divFlex.style.marginTop = '30px';
-  divFlex.style.border = '1px solid bleck';
-  divFlex.style.backgroundColor = 'lawngreen';
-  let h1Titel = document.createElement('h1');
-  let releaseYear = document.createElement('p');
-  let genre = document.createElement('p');
-  let Poster = document.createElement('img');
-  let btnOpetnNewHtml = document.createElement('button');
-  btnOpetnNewHtml.id = 'btnOpetnNewHtml';
-  btnOpetnNewHtml.innerText = 'Details';
-  Poster.style.width = '150px';
-  Poster.style.height = '200px';
-
-  divText.append(h1Titel);
-  divText.append(releaseYear);
-  divText.append(genre);
-  divText.append(btnOpetnNewHtml);
-  divImg.append(Poster);
-  divFlex.append(divImg);
-  divFlex.append(divText);
-  document.body.append(divFlex);
-
-  btnOpetnNewHtml.addEventListener('click', function(){
-    document.cookie = `http://www.omdbapi.com/?apikey=6d0934bb&t=${valueOne}&y=${valueTwo}&type=movie; expires=Thur, 30 Month 2022 13:00:00`;
-    window.open('comment.html' );
+// <!-- задание 1 -->
+// $(function(){
+//   $('.container').css({
+//     'display':'flex',
+//     'flex-wrap': 'wrap',
+//     'justify-content': 'space-around',
+//     'margin-top': '15px'
+//   });
+//   $('.selector').css('border','1px solid black');
+//   $('.green').css({
+//     'background-color':'aqua',
+//     'width': '100px',
+//     'height': '50px',
+//     'text-align': 'center'
+//   });
+//   $('.orange').css({
+//     'background-color':'orange',
+//     'width': '100px',
+//     'height': '50px',
+//     'text-align': 'center'
+//   });
+//   $('.yellow').css({
+//     'background-color':'yellow',
+//     'width': '100px',
+//     'height': '50px',
+//     'text-align': 'center'
+//   });
+//   $('.red').css({
+//     'background-color':'rgb(255, 0, 195)',
+//     'width': '100px',
+//     'height': '50px',
+//     'text-align': 'center'
+//   });
+//   $('h1').css('text-align', 'center');
+// });
+// $(function(){
+// $('#red').click(function(){
+//   $('.red').css('box-shadow', '0 16px 10px -4px rgb(255, 0, 195');
+// });
+// $('#green').click(function(){
+//   $('.green').css('box-shadow', '0 16px 10px -4px rgb(0,255,255');
+// });
+// $('#orange').click(function(){
+//   $('.orange').css('box-shadow', '0 16px 10px -4px rgb(255,165,0)');
+// });
+// $('#yellow').click(function(){
+//   $('.yellow').css('box-shadow', '0 16px 10px -4px rgb(255,255,0)');
+// });
+// });
+// <!-- задание 2 -->
+$(function(){
+  
+  $('.container').css({
+    'display':'flex',
+    'background-color': 'rgb(0, 162, 255)',
+    'width' : '360px'
   });
-
-    var parsJson = JSON.parse(text);
-    console.log(parsJson);
-    Poster.src = parsJson.Poster;
-    h1Titel.innerHTML = parsJson.Title;
-    releaseYear.innerHTML = parsJson.Year;
-    genre.innerHTML = parsJson.Genre;
-  },function(error){
-    alert('error');
-    alert(error);
+  $('div','.container').css({
+    'margin': '5px',
   });
+  $('a').css('text-decoration','none');
+  $('.block').css({
+    'display':'flex',
+    'width' : '358px',
+    'border':'1px solid black'
+  });
+  
 });
-
-function get(url){
-  return new Promise(function(succeed, fail){
-    let request = new XMLHttpRequest();
-    request.open("GET", url);
-    request.addEventListener("load", function(){
-      if(request.readyState == 4 && request.status == 200){
-      succeed(request.responseText);
-      }else
-      fail(new Error("Fail"));
-      
+$(function(){
+  // $('.none').css('display','block');
+  $('a','.Mango').click(function(){
+    $('.none').show();
+    $('.none').css('display','block');
+    let img = document.getElementById('img');
+    img.src = "./img/mango.jpeg" ;
+    let h1 = document.getElementById('h1');
+    h1.innerText = 'Mango';
+    let text = document.getElementById('text');
+    text.innerText = 'From Portuguese manga, from Malay mangga. First used for the fruit as early as the 1580s and the tree by the 1670s.[1][2] Ultimately from a Dravidian language[3] (reconstructed Proto-Dravidian *maṯ-kāy (“unripe mango”), a compound of *mā-m (“mango tree”) + *kāy (“unripe fruit”)[4]); Oxford English Dictionary says it ultimately stems from Malayalam മാങ്ങ (māṅṅa, “unripe mango”) (മാവ് (māvŭ, “mango tree”) + കായ (kāya, “unripe fruit”)),[2] while the Online Etymology Dictionary points to Tamil மாங்காய் (māṅkāy, “unripe mango”) (மா (mā, “mango”) + காய் (kāy, “unripe fruit”)).[1] The etymology of the -o ending is not certain.[2]';
     });
-    request.addEventListener('error', function(){
-      fail(new Error('Ошибка'));
-    });
-    request.send();
-  });
-}
-
-
-
-
+});
 
 
 
